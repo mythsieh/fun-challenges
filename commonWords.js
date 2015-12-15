@@ -241,13 +241,8 @@
     }
     // loop through final list and replace words with their counts
     for (var key in finalList){
-      var re = new RegExp(" " + key, 'g');
-      document.body.innerHTML = document.body.innerHTML.replace(re, " " + finalList[key]);
-      var re2 = new RegExp(key + ' ', 'g');
-      document.body.innerHTML = document.body.innerHTML.replace(re2, finalList[key] + ' ');
-      var capitalized = key[0].toUpperCase() + key.slice(1)
-      var re3 = new RegExp(capitalized, 'g');
-      document.body.innerHTML = document.body.innerHTML.replace(re3, finalList[key]);
+      var re = new RegExp(key, 'gi');
+      document.body.innerHTML = document.body.innerHTML.replace(re, finalList[key]);
     }
   });
 

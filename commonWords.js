@@ -87,6 +87,10 @@
         if (validUTFChar(str[i])){
           currentWord += str[i];
         }
+        // if string is at the end and there's still a current word
+        if (i === str.length - 1 && currentWord.length > 0){
+          addCurrentWord(currentWord.toLowerCase(), container);
+        }
       }
     }
     return container;
